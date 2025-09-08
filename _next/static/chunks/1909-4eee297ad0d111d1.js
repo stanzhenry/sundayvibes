@@ -1206,7 +1206,7 @@
             { isSM: l } = (0, I.lW)();
           return (0, a.jsx)(E.BoardBottomButtonBox, {
             children: (0, a.jsx)(S.m_, {
-              className: "flex !w-full [&>a]:!w-full",
+              className: "flex !w-full [&>a]:!w-full ",
               tooltipText: n,
               icon: !1,
               children: (0, a.jsx)(b.vs.Default, {
