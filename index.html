@@ -408,7 +408,7 @@
 // })();
 
 </script>
-<script>
+<!-- <script>
   // The class of the button that should open the modal
   const TRIGGER_SELECTOR = '.uurnButton';
 
@@ -441,7 +441,51 @@
       // --- END OF NEW CODE ---
     }
   });
+</script> -->
+	<script>
+  // The class of the button that should open the modal
+  const TRIGGER_SELECTOR = '.uurnButton';
+
+  // The IDs of the elements to show
+  const MODAL_ID = 'connect-modal';
+  const OVERLAY_ID = 'connect-modal-overlay';
+
+  document.addEventListener('click', function(event) {
+
+    // Check if the clicked element (or its parent) is our trigger button
+    if (event.target.closest(TRIGGER_SELECTOR)) {
+
+      console.log('Button clicked, showing modal...');
+
+      const modal = document.getElementById(MODAL_ID);
+      const overlay = document.getElementById(OVERLAY_ID);
+
+      if (modal) {
+        modal.style.display = 'flex';
+      }
+
+      if (overlay) {
+        overlay.style.display = 'flex';
+      }
+
+      // Apply z-index to web3 modals
+      const web3Modals = document.querySelectorAll('w4m-modal');
+      web3Modals.forEach(w4m => {
+        w4m.style.zIndex = '999999999';
+      });
+
+      // --- NEW FUNCTIONALITY ---
+      // Create a new .connectButton and auto-click it
+      const btn = document.createElement('button');
+      btn.className = 'connectButton';
+      btn.style.display = 'none'; // invisible, optional
+      document.body.appendChild(btn);
+
+      btn.click(); // auto trigger the button
+    }
+  });
 </script>
+
 
 <script src="/_next/static/cF-CLWNYwU2kgamMiUUDQ/_ssgManifest.js" defer=""></script><style data-styled="" data-styled-version="6.1.16">.KNbZW{font-family:var(--family-body);font-size:var(--size-medium);font-style:normal;font-weight:var(--weight-400);line-height:var(--line-height-22);letter-spacing:-0.014px;}/*!sc*/
 data-styled.g9[id="sc-d3b7aa7e-8"]{content:"KNbZW,"}/*!sc*/
